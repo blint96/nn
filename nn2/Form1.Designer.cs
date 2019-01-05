@@ -31,6 +31,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.RichTextBox();
+            this.btnRecognize = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnClear
@@ -45,7 +46,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(629, 66);
+            this.btnSave.Location = new System.Drawing.Point(629, 106);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(159, 33);
             this.btnSave.TabIndex = 1;
@@ -55,11 +56,21 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(629, 105);
+            this.txtName.Location = new System.Drawing.Point(629, 145);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(159, 28);
             this.txtName.TabIndex = 2;
             this.txtName.Text = "";
+            // 
+            // btnRecognize
+            // 
+            this.btnRecognize.Location = new System.Drawing.Point(629, 66);
+            this.btnRecognize.Name = "btnRecognize";
+            this.btnRecognize.Size = new System.Drawing.Size(159, 33);
+            this.btnRecognize.TabIndex = 3;
+            this.btnRecognize.Text = "Identyfikuj";
+            this.btnRecognize.UseVisualStyleBackColor = true;
+            this.btnRecognize.Click += new System.EventHandler(this.btnRecognize_Click);
             // 
             // Form1
             // 
@@ -67,6 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 570);
+            this.Controls.Add(this.btnRecognize);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClear);
@@ -82,6 +94,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.RichTextBox txtName;
+        private System.Windows.Forms.Button btnRecognize;
     }
 }
 
