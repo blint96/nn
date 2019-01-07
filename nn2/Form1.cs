@@ -120,7 +120,9 @@ namespace nn2
         private void btnRecognize_Click(object sender, EventArgs e)
         {
             //sql.getItemTest();
-
+            Tuple<int, double, int, double> result = AI.recognizeForPattern(input);
+            MessageBox.Show("na pierwszy rzut oka to jest " + result.Item1 + " z szansą: " + result.Item2 
+                + "%\npo dokładniejszym wyliczeniu to jest " + result.Item3 + " z szansą: " + result.Item4 + " %");
         }
     }
 }
