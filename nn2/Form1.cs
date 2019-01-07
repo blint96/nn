@@ -21,7 +21,7 @@ namespace nn2
         private int[,] input = new int[6, 6];
 
         // table for trained data
-        private int[,] trainData = new int[10];
+        //private int[,] trainData = new int[10];
 
         public Form1()
         {
@@ -81,6 +81,7 @@ namespace nn2
         private void Form1_Load(object sender, EventArgs e)
         {
             startMatrix();
+            AI.trainAll();
 
             // get the training data
             // sql.selectQuery..
@@ -118,7 +119,8 @@ namespace nn2
 
         private void btnRecognize_Click(object sender, EventArgs e)
         {
-            sql.getItemTest();
+            //sql.getItemTest();
+
         }
     }
 }

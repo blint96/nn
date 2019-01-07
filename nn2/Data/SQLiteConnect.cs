@@ -26,6 +26,40 @@ namespace nn2.Data
             }
         }
 
+        public SQLiteConnection getConnection()
+        {
+            return sqlite;
+        }
+
+        /**
+         * Get whole data of meaning
+         * meaning = 1, 2, 3, etc...
+         **/
+        public List<String> getDataForMeaning(int meaning)
+        {
+            String query = "SELECT * FROM data WHERE meaning = " + meaning.ToString();
+            List<String> result = new List<String>();
+            try
+            {
+                SQLiteCommand cmd;
+                sqlite.Open();
+
+                cmd = sqlite.CreateCommand();
+                cmd.CommandText = query;
+
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    int contentIndex = reader.GetOrdinal("content");
+                    String resultLocal = reader.GetString(contentIndex);
+                    result.Add(resultLocal);
+                }
+            } catch (Exception e) { }
+
+            sqlite.Close();
+            return result;
+        }
+
         public void getItemTest()
         {
             String query = "SELECT * FROM data WHERE id = 5";
